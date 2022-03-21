@@ -1,0 +1,42 @@
+type Reservation = {
+  departure: Date;
+  arrival?: Date;
+  departingFrom: string;
+  destination: string;
+};
+
+type Reserve = {
+  (
+    departure: Date,
+    arrival: Date,
+    departingFrom: string,
+    destination: string
+  ): Reservation;
+  (departure: Date, departingFrom: string, destination: string): Reservation;
+};
+
+const reserve: Reserve = (
+  departure: Date,
+  arrivalOrFrom: Date | string,
+  destinationOrFrom: string,
+  destination?: string
+): Reservation | never => {
+  if (arrivalOrFrom instanceof Date && destination !== undefined) {
+    return {
+      departure: departure,
+      arrival: arrivalOrFrom,
+      departingFrom: destinationOrFrom,
+      destination: destination,
+    };
+  } else if (typeof arrivalOrFrom === "string") {
+    return {
+      departure: departure,
+      departingFrom: arrivalOrFrom,
+      destination: destinationOrFrom,
+    };
+  }
+  throw new Error("Please Pass valid argments to the function");
+};
+
+console.log(reserve(new Date(), new Date(), "New York", "Washington"));
+console.log(reserve(new Date(), "New York", "Washington"));
