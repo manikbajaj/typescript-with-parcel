@@ -1,12 +1,12 @@
-type Holidays = { date: Date; reason: string };
+type Holidays = { date: Date; reason: string }[];
 
 abstract class Department {
-  protected abstract holidays: Holidays[];
+  protected abstract holidays: Holidays;
 
-  protected constructor(protected name: string) {}
+  protected constructor(protected name: string) {};
 
   // Method to add holidays
-  public addHoliday(holidays: Holidays[]) {
+  public addHoliday(holidays: Holidays) {
     if (Array.isArray(holidays)) {
       for (const holiday of holidays) {
         this.holidays.push(holiday);
@@ -16,20 +16,18 @@ abstract class Department {
 }
 
 class ItDepartment extends Department {
-  // constructor(protected holidays: Holidays[]) {
-  //   super("IT Department");
-  // }
+  protected holidays:Holidays = [];
+  constructor() {
+    super("It Department");
+  }
 }
 
 class AdminDepartment extends Department {
-  // constructor(protected holidays: Holidays[]) {
-  //   super("Admin Department");
-  // }
+  protected holidays:Holidays = [];
+  constructor() {
+    super("Admin Department");
+  }
 }
 
-const itDepartment = new ItDepartment([
-  { date: new Date(2022, 11, 25), reason: "Christmas" },
-  { date: new Date(2022, 3, 17), reason: "Easter" },
-]);
-
-console.log(itDepartment);
+const itDepartment = new ItDepartment();
+itDepartment.addHoliday([{date:new Date(), reason: "Christmas"}])
