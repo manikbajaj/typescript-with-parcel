@@ -459,3 +459,50 @@ $RECYCLE.BIN/
 
 package-lock.json
 node_modules
+.idea
+
+# Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,linux,archlinuxpackages,windows,macos,jetbrains+all
+# Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,linux,archlinuxpackages,windows,macos,jetbrains+all
+
+### ArchLinuxPackages ###
+*.tar
+*.tar.*
+*.jar
+*.exe
+*.msi
+*.zip
+*.tgz
+*.log
+*.log.*
+*.sig
+
+pkg/
+src/
+
+
+
+### JetBrains+all Patch ###
+# Ignore everything but code style settings and run configurations
+# that are supposed to be shared within teams.
+
+.idea/*
+
+### macOS Patch ###
+# iCloud generated files
+*.icloud
+
+### VisualStudioCode ###
+.vscode/*
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
+
+# End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,linux,archlinuxpackages,windows,macos,jetbrains+all
