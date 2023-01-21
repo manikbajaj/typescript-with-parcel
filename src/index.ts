@@ -1,10 +1,28 @@
+type TypeOfLibrary = "national" | "academic" | "public";
+
+type Book = {
+  title: string;
+  pages: number;
+  isbn: string;
+};
+
+type Member = {
+  name: string;
+  phone: string;
+  [key: string]: string;
+};
+
 type Library = {
   name: string;
   address: string;
   numberOfBooks: number;
+  type: TypeOfLibrary;
+  books: Book[];
+  genres: string[];
+  members: Member[];
 };
 
-const library = {
+const library: Library = {
   name: "New York Library",
   address: " 24, Some Street, New York",
   numberOfBooks: 1254,
