@@ -26,3 +26,4 @@ person.age = 70;
 
 console.log(person);
 console.log(person.age);
+console.log(person.getName());
