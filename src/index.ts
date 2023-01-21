@@ -13,32 +13,3 @@ type Airplane = {
     [key: string]: string;
   };
 };
-
-type Airplanes = Airplane[];
-
-const airplanes: Airplanes = [
-  {
-    flightNumber: "SG102",
-    airplaneModel: "A380",
-    dateOfDeparture: "01/12/2022",
-    timeOfDeparture: "23:30",
-    from: "JFK",
-    to: "DCA",
-    seats: {
-      "10A": "Mark Thomas",
-      "10B": "John Jacobs",
-    },
-  },
-  {
-    flightNumber: "SG102",
-    airplaneModel: "A380",
-    dateOfDeparture: "01/12/2022",
-    timeOfDeparture: "23:30",
-    from: "JFK",
-    to: "DCA",
-    seats: {
-      "10A": "Mark Thomas",
-      "10B": "John Jacobs",
-    },
-  },
-];
