@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "parcel": "^2.0.1",
+    "parcel": "^2.8.3",
     "prettier": "2.5.0"
   }
 }

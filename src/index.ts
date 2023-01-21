@@ -1,35 +1,33 @@
-type Holidays = { date: Date; reason: string };
-
-abstract class Department {
-  protected abstract holidays: Holidays[];
-
-  protected constructor(protected name: string) {}
-
-  // Method to add holidays
-  public addHoliday(holidays: Holidays[]) {
-    if (Array.isArray(holidays)) {
-      for (const holiday of holidays) {
-        this.holidays.push(holiday);
-      }
-    }
-  }
+enum Subjects {
+  science = "science",
+  business = "business",
 }
 
-class ItDepartment extends Department {
-  // constructor(protected holidays: Holidays[]) {
-  //   super("IT Department");
-  // }
-}
+type ScienceReport = {
+  type: Subjects.science;
+  physics: number;
+  chemistry: number;
+  maths: number;
+};
 
-class AdminDepartment extends Department {
-  // constructor(protected holidays: Holidays[]) {
-  //   super("Admin Department");
-  // }
-}
+type BusinessReport = {
+  type: Subjects.business;
+  accounts: number;
+  economics: number;
+};
 
-const itDepartment = new ItDepartment([
-  { date: new Date(2022, 11, 25), reason: "Christmas" },
-  { date: new Date(2022, 3, 17), reason: "Easter" },
-]);
+type GenerateReport = {
+  (
+    type: Subjects.science,
+    physics: number,
+    chemistry: number,
+    maths: number
+  ): ScienceReport;
+  (
+    type: Subjects.business,
+    accounts: number,
+    economics: number
+  ): BusinessReport;
+};
 
-console.log(itDepartment);
+function generateReport() {}
