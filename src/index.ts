@@ -2,7 +2,7 @@ const library = {
   name: "New York Library",
   address: " 24, Some Street, New York",
   numberOfBooks: 1254,
-  type: "national",
+  type: "national", // 'national', 'academic', 'public'
   books: [
     {
       title: "Harry Potter",
