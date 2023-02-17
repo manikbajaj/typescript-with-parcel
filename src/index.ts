@@ -16,7 +16,20 @@ abstract class Department {
     }
   }
 
-  public abstract printHolidays(): void;
+  public printHolidays() {
+    if (this.holidays.length === 0) {
+      return console.log("There are no holidays");
+    }
+    console.log(
+      `Here is the list of holidays`
+    );
+
+    this.holidays.forEach((holiday, index) => {
+      console.log(
+        `${index + 1}. ${holiday.reason}, ${holiday.date}`
+      );
+    });
+  }
 }
 
 class ItDepartment extends Department {
