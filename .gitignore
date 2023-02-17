@@ -96,7 +96,6 @@ modules.xml
 
 # Sonarlint plugin
 .idea/sonarlint
-
 ### Linux ###
 *~
 
@@ -505,4 +504,4 @@ src/
 .history
 .ionide
 
-# End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,linux,archlinuxpackages,windows,macos,jetbrains+all
+!/src/index2.ts
