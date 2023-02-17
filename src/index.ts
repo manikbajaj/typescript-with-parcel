@@ -6,6 +6,10 @@ abstract class Person {
   public greeting() {
     console.log(`Hello ${this.name}`);
   }
+
+  public static nameClass () {
+    return "Class name is Person"
+  }
 }
 
 class RegisteredPerson extends Person {
@@ -25,3 +29,4 @@ const person: RegisteredPerson = new RegisteredPerson(
 
 person.greeting();
 console.log(person)
+console.log(Person.nameClass)
