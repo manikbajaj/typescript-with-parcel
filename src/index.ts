@@ -21,7 +21,7 @@ abstract class Department {
       return console.log("There are no holidays");
     }
     console.log(
-      `Here is the list of holidays ${this.name}`
+      `Here is the list of holidays`
     );
 
     this.holidays.forEach((holiday, index) => {
